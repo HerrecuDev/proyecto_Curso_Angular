@@ -17,6 +17,11 @@ export class ProductListComponent {
   ];
   selectedProduct: Product | undefined;
 
+  onSelect(product: Product){
+    this.selectedProduct = product;
+    console.log(`Select product: ${product.title}`);
+  }
+
   onAdded() {
     alert(`${this.selectedProduct?.title} added to the cart!`);
   }
