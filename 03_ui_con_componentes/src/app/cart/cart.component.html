@@ -1,0 +1,37 @@
+<!-- Declaro la estructura del front-->
+@if (items().length >0){
+
+    <div class="cart">
+
+        <h2>Cart ({{items().length}})</h2>
+
+        <ul>
+            
+            @for (item of items(); track $index){ 
+
+                <li>
+                
+                <!--Titulo del articulo añadido-->
+
+                {{item.title}} (x{{item.total}})
+
+
+                @if(item.total > 1){
+                
+                    <button (click)="remove.emit(item.id)">-</button>
+
+                }@else {
+
+                    <button (click)="remove.emit(item.id)"></button>
+
+                }
+
+                </li>
+            }
+        </ul>
+    </div>
+
+
+} @else {
+    <p>Cart is empty</p>
+}

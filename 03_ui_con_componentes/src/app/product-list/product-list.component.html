@@ -17,7 +17,12 @@
   }
 </ul>
 
+<!-- Agrega prodcutos al carrito cuando seleccionamos add-->
 <app-product-detail
   [product]="selectedProduct"
   (added)="onAdded()"
 ></app-product-detail>
+
+<!--Elimina el producto del carrito cuando selecionamos la X-->
+<app-cart [items]="cart" (remove)="onRemove($event)"></app-cart>
+
