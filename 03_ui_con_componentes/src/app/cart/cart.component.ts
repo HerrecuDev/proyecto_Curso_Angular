@@ -16,8 +16,4 @@ export class CartComponent {
   //Para poder eliminar el producto:
   remove = output<number>();
 
-  
-
-  
-
 }
