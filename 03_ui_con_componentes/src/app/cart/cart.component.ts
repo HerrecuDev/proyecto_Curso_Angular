@@ -9,12 +9,14 @@ import { Product } from '../product';
 })
 export class CartComponent {
 
-  //Declaro u imput signal para el array de Producto:
+  //Declaro un imput signal para el array de Producto:
 
   items = input<Product[]>([]);
 
   //Para poder eliminar el producto:
   remove = output<number>();
 
+
+  
 
 }
