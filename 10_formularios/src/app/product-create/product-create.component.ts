@@ -25,7 +25,7 @@ export class ProductCreateComponent {
       nonNullable: true,
       validators: [
         Validators.required,
-        Validators.min(1),
+        Validators.min(0.0001), 
         priceMaximumValidator(1000)
       ]
     }),
