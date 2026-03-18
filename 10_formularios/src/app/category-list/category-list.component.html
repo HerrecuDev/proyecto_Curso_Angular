@@ -1,0 +1,12 @@
+<h1>Categorias</h1>
+<ul>
+    @for (category of categories; track category.id){
+        <li>{{category.name}}</li>
+    }
+
+
+</ul>
+
+<app-category-create (categoryCreated)="addCategory($event)">
+    
+</app-category-create>

@@ -6,6 +6,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { authGuard } from './auth.guard';
 import { checkoutGuard } from './checkout.guard';
 import { productsResolver } from './products.resolver';
+import { CategoryListComponent } from './category-list/category-list.component';
 
 export const routes: Routes = [
   {
@@ -28,6 +29,9 @@ export const routes: Routes = [
     loadChildren: () => import('./user.routes'),
     canMatch: [authGuard]
   },  
+  { path: 'categories', component: CategoryListComponent },
   { path: '', redirectTo: 'products', pathMatch: 'full' },
   { path: '**', redirectTo: 'products' }
+
+  
 ];
