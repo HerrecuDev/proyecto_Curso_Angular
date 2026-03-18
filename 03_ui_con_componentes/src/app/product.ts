@@ -2,7 +2,6 @@ export interface Product {
   id: number;
   title: string;
 
-  //Para que se sumen los productos repetivos en carrtio:
-
+  //Para calcular el numero total de productos iguales en el carrito
   total:number;
 }
