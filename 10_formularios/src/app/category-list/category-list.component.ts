@@ -29,24 +29,38 @@ export class CategoryListComponent {
 
   categories: Category[] = [...this.categoriesOriginal];
 
+  //En caso de no coincidir con ninguna categoria lanzo el mensaje:
+  sinCoincidencia: boolean = false;
+
   //Recibimos el texto del hijo y filtramos :
-  
+
   onSearchChange(searchText: string): void {
 
     if(!searchText) {
       //Si esta vacio mostramos las categorias que hay:
 
       this.categories = [...this.categoriesOriginal];
+      this.sinCoincidencia = false;
     }else{
-      //Filtro por nombre ignorando mayusculas del texto incorporado por el usuario:
 
-      this.categories = this.categoriesOriginal.filter( category =>
-        category.name.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())
+          //Filtro por nombre ignorando mayusculas del texto incorporado por el usuario:
+
+          this.categories = this.categoriesOriginal.filter( category =>
+          category.name.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())
       );
+
     }
 
+    if(this.categories.length == 0){
+
+      this.sinCoincidencia = true;
+
+    }
+
+
+
   }
- 
+
   //Agregamos el componente hijo:
   addCategory(category : { name:string}){
 

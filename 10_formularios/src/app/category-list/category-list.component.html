@@ -8,8 +8,12 @@
         <li>{{category.name}}</li>
     }
 
+    @if (sinCoincidencia){
+      <p>No se encontro ninguna categoria</p>
+    }
+
 </ul>
 
 <app-category-create (categoryCreated)="addCategory($event)">
-    
+
 </app-category-create>
