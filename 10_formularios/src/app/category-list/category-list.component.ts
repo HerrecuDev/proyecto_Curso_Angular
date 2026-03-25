@@ -45,12 +45,8 @@ export class CategoryListComponent {
       );
     }
 
-
-
   }
  
-
-
   //Agregamos el componente hijo:
   addCategory(category : { name:string}){
 

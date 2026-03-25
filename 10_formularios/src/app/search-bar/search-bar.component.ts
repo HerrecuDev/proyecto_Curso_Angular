@@ -16,7 +16,6 @@ export class SearchBarComponent {
 
   searchControl = new FormControl('');
 
-
   //Observable
   ngOnInit(): void {
 
